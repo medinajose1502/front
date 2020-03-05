@@ -2,7 +2,7 @@
   <div>
   <br>
   <br>
-    <b-table striped hover :items="items"></b-table>
+    <b-table :items="items" :fields="fields" :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" sort-icon-leftstriped hover></b-table>
   <br>
   <br>
   </div>
@@ -13,11 +13,19 @@
   export default {
     data() {
       return {
+        sortBy: 'id',
+        sortDesc: false,
+        fields: [
+          { key: 'id', sortable: true },
+          { key: 'nombre', sortable: true },
+          { key: 'precio', sortable: true },
+          { key: 'categoria', sortable: true }
+        ],
         items: [
-          { codigo: 40, nombre: 'Dell G5SE', categoria: 'Computadoras', precio: 1000},
-          { codigo: 21, nombre: 'Samsung Galaxy S20', categoria: 'Celulares', precio: 1000},
-          { codigo: 89, nombre: 'Asus RoG Swift', categoria: 'Monitores', precio: 1000},
-          { codigo: 38, nombre: 'Windows 10', categoria: 'Software', precio: 1000}
+          { id: 1, nombre: 'Dell G5SE', precio: '900', categoria: 'Computadoras' },
+          { id: 2, nombre: 'Samsung Galaxy S20', precio: '1400', categoria: 'Celulares' },
+          { id: 3, nombre: 'Asus RoG Swift', precio: '2500', categoria: 'Monitores' },
+          { id: 4, nombre: 'Windows 10 Pro', precio: '100', categoria: 'Software' }
         ]
       }
     }

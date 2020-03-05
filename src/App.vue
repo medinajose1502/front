@@ -7,7 +7,7 @@
         <b-col>
           </b-col>
             <b-col>
-              <Crud @producto-registrado="agregarAInventario"></Crud>
+              <Crud v-on:registrado="agregarAInventario"></Crud>
             </b-col>
           <b-col>
         </b-col>

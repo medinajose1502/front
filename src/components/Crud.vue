@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-card>
-    <b-form @submit.prevent="onSubmit">
+    <b-form @submit.prevent="agregarP">
       <b-form-group id="input-group-1" label="Código:" label-for="input-1" 
       description="Código del producto.">
         <b-form-input id="input-1" v-model="producto.id" type="text" placeholder="Ingrese código"></b-form-input>
@@ -24,7 +24,7 @@
       <b-button type="reset" variant="danger">Limpiar</b-button>
       <br>
       <br>
-      <b-button type="submit" variant="primary">Agregar producto</b-button>
+      <b-button type="submit" action="onSubmit" variant="primary">Agregar producto</b-button>
     </b-form>
     </b-card>
   </div>
@@ -48,7 +48,7 @@ export default {
     }
   },
   methods: {
-    onSubmit()
+    agregarP()
     {
       if(this.id && this.nombre && this.categoria && this.precio && this.img)
       {
@@ -61,25 +61,22 @@ export default {
           precio: this.precio
         }
         this.$emit('producto-registrado', productoAgregado)
-        this.id = null
-        this.nombre = null
-        this.categoria = null
-        this.precio = null
       }
-      else{
+      else
+      {
           if(this.id == '') this.errores.push("Debe ingresar un código.")
           if(this.nombre == '') this.errores.push("Debe ingresar un nombre para el producto.")
           if(this.categoria == '') this.errores.push("Debe selecciona una categoria.")
           if(this.precio == null) this.errores.push("Debe ingresar un precio.")
-        }
-    },
+      }
+    }/*,
     onReset()
     {
       this.id = null
       this.nombre = null
       this.categoria = null
       this.precio = null
-    }
+    }*/
   }
 }
 </script>
