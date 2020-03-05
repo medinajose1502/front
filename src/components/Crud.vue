@@ -67,9 +67,9 @@ export default {
         this.precio = null
       }
       else{
-          if(this.id.length == 0) this.errores.push("Debe ingresar un código.")
-          if(this.nombre.length == 0) this.errores.push("Debe ingresar un nombre para el producto.")
-          if(this.categoria.length == 0) this.errores.push("Debe selecciona una categoria.")
+          if(this.id == '') this.errores.push("Debe ingresar un código.")
+          if(this.nombre == '') this.errores.push("Debe ingresar un nombre para el producto.")
+          if(this.categoria == '') this.errores.push("Debe selecciona una categoria.")
           if(this.precio == null) this.errores.push("Debe ingresar un precio.")
         }
     },
