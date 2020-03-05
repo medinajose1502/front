@@ -1,9 +1,21 @@
 <template>
   <div id="app">
-    <Cabecera/>
-    <Crud/>
-    <Tabla/>
-    <Grafico/>
+    <Cabecera></Cabecera>
+    <b-container>
+
+      <b-row>
+        <b-col>
+          </b-col>
+            <b-col>
+              <Crud @producto-registrado="agregarAInventario"></Crud>
+            </b-col>
+          <b-col>
+        </b-col>
+      </b-row>
+
+      <Tabla productos="productos"></Tabla>
+      <Grafico></Grafico>
+    </b-container>
   </div>
 </template>
 
@@ -20,6 +32,19 @@ export default {
     Crud,
     Grafico,
     Tabla,
+  },
+
+  data: function() {
+   return {
+      productos: []
+   }
+  },
+
+  methods: {
+    agregarAInventario(productoAgregado)
+    {
+      this.productos.push(productoAgregado)
+    }
   }
 }
 </script>
