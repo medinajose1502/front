@@ -1,28 +1,16 @@
-<template>
-  <div>
-
-  </div>
-</template>
-
 <script>
-export default {
-    /*props:
-    {
-      productos:
-      {
-        type: Array,
-        required: true
-      } 
-    },
-    /*data() {
-      return 
-      {
+import { Doughnut } from 'vue-chartjs'
 
-      }
-    }*/
+export default {
+  extends: Doughnut,
+  props:['chartData','options'],
+  methods: {
+    update() {
+      this.$data._chart.update()
+    }
+  },
+  mounted () {
+    this.renderChart(this.chartData, this.options)
+  }
 }
 </script>
-
-<style>
-
-</style>

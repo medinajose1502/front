@@ -14,7 +14,9 @@
       </b-row>
 
       <Tabla v-bind:productos="productos"></Tabla>
-      <Grafico></Grafico>
+      <Grafico ref="skills_chart"
+        :chart-data="chartData"
+        :options="options">></Grafico>
     </b-container>
   </div>
 </template>
@@ -24,6 +26,14 @@ import Cabecera from './components/Cabecera.vue'
 import AddProducto from './components/Crud.vue'
 import Grafico from './components/Grafico.vue'
 import Tabla from './components/Tabla.vue'
+import randomColor from 'randomcolor'
+const options = {
+  responsive: true, 
+  maintainAspectRatio: false, 
+  animation: {
+    animateRotate: false
+    }
+    }
 
 export default {
   name: 'App',
@@ -36,8 +46,19 @@ export default {
 
   data() {
    return {
-      productos: []
-   }
+      productos: [],
+      options,
+     chartData: {
+        labels: ['Celulares', 'Monitores', 'Computadoras', 'Software'],
+        datasets: [
+          {
+            backgroundColor: [randomColor(),randomColor(),randomColor(),randomColor()],
+            data: [1,2,4,5]
+          }
+        ]
+      
+      }
+    }
   },
 
   methods: {
