@@ -2,51 +2,47 @@
   <div id="app">
     <Cabecera></Cabecera>
     <b-container>
-
       <b-row>
+        <b-col></b-col>
         <b-col>
-          </b-col>
-            <b-col>
-              <AddProducto v-on:producto-registrado="addProducto"></AddProducto>
-            </b-col>
-          <b-col>
+          <AddProducto v-on:producto-registrado="addProducto"></AddProducto>
         </b-col>
+        <b-col></b-col>
       </b-row>
 
-      <Tabla v-bind:productos="productos"></Tabla>
-      <Grafico></Grafico>
+      <Tabla :productos="productos"></Tabla>
+      <Grafico :productos="productos"></Grafico>
     </b-container>
   </div>
 </template>
 
 <script>
-import Cabecera from './components/Cabecera.vue'
-import AddProducto from './components/Crud.vue'
-import Grafico from './components/Grafico.vue'
-import Tabla from './components/Tabla.vue'
+import Cabecera from "./components/Cabecera.vue";
+import AddProducto from "./components/Crud.vue";
+import Grafico from "./components/Grafico.vue";
+import Tabla from "./components/Tabla.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Cabecera,
     AddProducto,
     Grafico,
-    Tabla,
+    Tabla
   },
 
   data() {
-   return {
+    return {
       productos: []
-   }
+    };
   },
 
   methods: {
-    addProducto(productoAgregado)
-    {
-      this.productos= [...this.productos , productoAgregado]
+    addProducto(productoAgregado) {
+      this.productos = [...this.productos, productoAgregado];
     }
   }
-}
+};
 </script>
 
 <style>
