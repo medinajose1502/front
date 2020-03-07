@@ -4,7 +4,8 @@
 
 ### Node.js
 
-### Git (Sí se va a clonar a través de la consola)
+### Git (Si se va a clonar a través de la consola)
+
 
 ## Instalación:
 
