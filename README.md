@@ -1,24 +1,23 @@
-# front
+# Instrucciones
 
-## Project setup
+## Requerimientos:
+# Node.js
+# Git (Sí se va a clonar a través de la consola)
+
+## Instalación
+#En la consola ejecutar el siguiente comando:
+```
+git clone https://github.com/medinajose1502/front.git
+```
+## Despues de que ha sido terminado de clonar:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compila y corre front:
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
+### Personaliza configuración:
 See [Configuration Reference](https://cli.vuejs.org/config/).
