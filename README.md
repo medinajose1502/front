@@ -1,11 +1,14 @@
 # Instrucciones
 
 ## Requerimientos:
+
 # Node.js
+
 # Git (Sí se va a clonar a través de la consola)
 
 ## Instalación
-#En la consola ejecutar el siguiente comando:
+
+# En la consola ejecutar el siguiente comando:
 ```
 git clone https://github.com/medinajose1502/front.git
 ```
